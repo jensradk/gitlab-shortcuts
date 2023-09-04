@@ -1,0 +1,56 @@
+{
+    "manifest_version": 3,
+    "name": "Gitlab Keyboard Shortcuts",
+    "version": "0.0.1",
+    "description": "Add keyboard shortcuts to certain pages of gitlab.",
+    "icons": {
+        "16": "img/icon_16.png",
+        "48": "img/icon_48.png",
+        "128": "img/icon_128.png"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://gitlab.cego.dk/*/merge_requests",
+                "https://gitlab.cego.dk/*/merge_requests?*"
+            ],
+            "js": [
+                "merge_request_list.js"
+            ],
+            "run_at": "document_idle"
+        },
+        {
+            "matches": [
+                "https://gitlab.cego.dk/*/merge_requests/*"
+            ],
+            "js": [
+                "merge_request_single.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://gitlab.cego.dk/*/branches",
+                "https://gitlab.cego.dk/*/branches/*"
+            ],
+            "exclude_matches": [
+                "https://gitlab.cego.dk/*/branches/new"
+            ],
+            "js": [
+                "branch_list.js"
+            ],
+            "run_at": "document_idle"
+        },
+        {
+            "matches": [
+                "https://gitlab.cego.dk/search?search=*"
+            ],
+            "js": [
+                "search_list.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
