@@ -51,6 +51,16 @@
                 "search_list.js"
             ],
             "run_at": "document_idle"
+        },
+        {
+            "matches": [
+                "https://gitlab.cego.dk/*/pipelines*",
+                "https://gitlab.cego.dk/*/pipelines?*"
+            ],
+            "js": [
+                "pipeline_list.js"
+            ],
+            "run_at": "document_idle"
         }
     ]
 }
