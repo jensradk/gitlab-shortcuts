@@ -21,10 +21,11 @@ window.addEventListener('load', function () {
         var branchContainerList = document.querySelectorAll('[data-qa-selector="branch_container"]');
         var shortcutList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
         for (var i = 0; i < Math.min(10, branchContainerList.length); i++) {
-            var branchContainer = branchContainerList[i];
             var shortcut = shortcutList[i];
-            branchContainer.insertBefore(document.createTextNode('(alt+' + shortcut + ') '), branchContainer.firstChild);
-            branchContainer.querySelector('[data-qa-selector="branch_link"]').setAttribute('accesskey', shortcut.toString());
+            var branchContainer = branchContainerList[i];
+            var branchLink = branchContainer.querySelector('[data-qa-selector="branch_link"]');
+            branchLink.insertBefore(document.createTextNode('(alt+' + shortcut + ') '), branchLink.firstChild);
+            branchLink.setAttribute('accesskey', shortcut.toString());
         }
     }, 250)
 })
