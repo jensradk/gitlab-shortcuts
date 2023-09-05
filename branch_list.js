@@ -27,5 +27,14 @@ window.addEventListener('load', function () {
             branchLink.insertBefore(document.createTextNode('(alt+' + shortcut + ') '), branchLink.firstChild);
             branchLink.setAttribute('accesskey', shortcut.toString());
         }
+
+        // Add n accesskey to "New branch" button:
+        var elBtnNewBranch = document.querySelector('[class="gl-button btn btn-md btn-confirm "]');
+        if (elBtnNewBranch != null) {
+            elBtnNewBranch.setAttribute('accesskey', 'n');
+            var elBtnNewBranchText = elBtnNewBranch.querySelector('[class="gl-button-text"]');
+            elBtnNewBranchText.innerHTML = 'New branch (alt+n)';
+        }
+
     }, 250)
 })
