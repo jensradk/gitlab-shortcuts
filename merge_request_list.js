@@ -31,3 +31,11 @@ for (var i = 0; i < Math.min(10, mergeRequestContainerList.length); i++) {
     mergeRequestLink.insertBefore(document.createTextNode('(alt+' + shortcut + ') '), mergeRequestLink.firstChild);
     mergeRequestLink.setAttribute('accesskey', shortcut.toString());
 }
+
+// Add n accesskey to "New merge request" button:
+var elBtnNewBranch = document.querySelector('[class="gl-button btn btn-md btn-confirm "]');
+if (elBtnNewBranch != null) {
+    elBtnNewBranch.setAttribute('accesskey', 'n');
+    var elBtnNewBranchText = elBtnNewBranch.querySelector('[class="gl-button-text"]');
+    elBtnNewBranchText.innerHTML = 'New branch (alt+n)';
+}
