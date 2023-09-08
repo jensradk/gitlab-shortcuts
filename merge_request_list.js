@@ -37,5 +37,5 @@ var elBtnNewBranch = document.querySelector('[class="gl-button btn btn-md btn-co
 if (elBtnNewBranch != null) {
     elBtnNewBranch.setAttribute('accesskey', 'n');
     var elBtnNewBranchText = elBtnNewBranch.querySelector('[class="gl-button-text"]');
-    elBtnNewBranchText.innerHTML = 'New branch (alt+n)';
+    elBtnNewBranchText.innerHTML = 'New merge request (alt+n)';
 }
